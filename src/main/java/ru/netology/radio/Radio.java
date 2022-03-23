@@ -11,9 +11,6 @@ public class Radio {
 
     // Блок взаимодействия с радиостанциями:
     public void setCurrentNumberStation(int newCurrentNumberStation) {
-        if (newCurrentNumberStation < 0) {
-            return;
-        }
         if (newCurrentNumberStation > 9) {
             return;
         }

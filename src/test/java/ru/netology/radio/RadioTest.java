@@ -69,6 +69,14 @@ class RadioTest {
         int actual =radio.nextNumberStation(9);
         assertEquals (expected, actual);
     }
+    @org.junit.jupiter.api.Test
+    void nextNumberStation5() {
+        Radio radio = new Radio();
+        radio.nextNumberStation(10);
+        int expected = 10;
+        int actual = radio.nextNumberStation(10);
+        assertEquals (expected, actual);
+    }
 
 
     @org.junit.jupiter.api.Test
@@ -103,6 +111,14 @@ class RadioTest {
         int expected = 9;
         int actual = radio.prevNumberStation(0);
         assertEquals (expected, actual);
+    }
+    @org.junit.jupiter.api.Test
+    void prevNumberStation5() {
+        Radio radio = new Radio();
+        radio.prevNumberStation(-1);
+        int expected = -1;
+        int actual = radio.prevNumberStation(-1);
+        assertEquals(expected, actual);
     }
     @org.junit.jupiter.api.Test
     void increaseVolume() {
