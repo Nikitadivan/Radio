@@ -1,15 +1,15 @@
 package ru.netology.radio;
 
 public class Radio {
-    public int currentNumberStation;
-    public int currentVolume;
+    private int currentNumberStation;
+    private int currentVolume;
 
+    // Блок взаимодействия с радиостанциями:
     public int getCurrentNumberStation() {
 
         return currentNumberStation;
     }
 
-    // Блок взаимодействия с радиостанциями:
     public void setCurrentNumberStation(int newCurrentNumberStation) {
         if (newCurrentNumberStation > 9) {
             return;
@@ -17,35 +17,44 @@ public class Radio {
         currentNumberStation = newCurrentNumberStation;
     }
 
-    public int nextNumberStation(int currentNumberStation) {
+    public int nextNumberStation() {
         if (currentNumberStation < 9) {
             return currentNumberStation = currentNumberStation + 1;
         }
-        if (currentNumberStation == 9) {
-            return currentNumberStation = 0;
-        }
-        return currentNumberStation;
+        return currentNumberStation = 0;
+
     }
 
-    public int prevNumberStation(int currentNumberStation) {
+    public int prevNumberStation() {
         if (currentNumberStation > 0) {
             return currentNumberStation = currentNumberStation - 1;
         }
-        if (currentNumberStation == 0) {
-            return currentNumberStation = 9;
-        }
-        return currentNumberStation;
+
+        return currentNumberStation = 9;
+
     }
 
-    //Блок взаимодействия со звуком:
-    public int increaseVolume(int currentVolume) {
+    // блок взаимодействия со звуком:
+    public int getCurrentVolume() {
+
+        return currentVolume;
+    }
+
+    public void setCurrentVolume(int newCurrentVolume) {
+        if (newCurrentVolume > 10) {
+            return;
+        }
+        currentVolume = newCurrentVolume;
+    }
+
+    public int inCreaseVolume() {
         if (currentVolume < 10) {
             return currentVolume = currentVolume + 1;
         }
         return currentVolume;
     }
 
-    public int decreaseVolume(int currentVolume) {
+    public int deCreaseVolume() {
         if (currentVolume > 0) {
             return currentVolume = currentVolume - 1;
         }
